@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enock's Website</title>
+    <style>
+        html{
+            background-color: #E7F0DC;
+        }
+        .questions{
+            background-color: #E7F0DC;
+            height:px;
+            width: 70%;
+            margin-left: 0;
+        }
+        .container{
+            
+            margin-left: 5%;
+            padding: 10px;
+        }
+        p{
+            font-size: 20px;
+        }
+        h1,h2{
+            text-align: center;
+        }
+        .header{
+            text-align: center;
+        }
+        input{
+            border-radius: 10px;
+            width: 200px;
+            height: 30px;
+            text-align: center;
+            margin-left: 5%;
+            
+            font-size: 20px;
+        }
+        button{
+            border-radius: 10px;
+            width: 200px;
+            height: 40px;
+            font-size: large;
+            font-weight: bolder;
+            margin-left: 5%;
+        }
+        button:hover{
+            background-color: #597445;
+            color: white;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <h1>Enock's Website</h1>
+    <h2>How well do you know Enock</h2>
+    <p class="header">This is practical website design by Enock to determine how much people know him and as well 
+        practice his website design skills, you can answer the following questions for a ransome reward 
+    </p>
+    <hr/>
+
+
+    <div class="questions">
+        <div class="container">
+            <p>Q.1 What is  Enock's full name</p>
+            <input type="text" id="input1">
+            <p id="result1"></p>
+        
+
+        
+            <p>Q.2 What is Enock's age</p>
+            <input type="number" id="input2">
+            <p id="result2"></p>
+        
+
+        
+            <p>Q.3 What is Enock's date of birth</p>
+            <input type="date" id="myDate">
+            <p id="result3"></p>
+        
+
+        
+            <p>Q.4 How many siblings does Enock have</p>
+            <input type="number" id="input4">
+            <p id="result4"></p>
+        
+
+        
+            <p>Q.5 What is Enock's nickname</p>
+            <input type="text" id="input5">
+            <p id="result5"></p>
+        
+            
+        
+            <button id="finish" onclick="dateVerify()">Submit/Check Score</button>
+        </div>
+    </div>
+</body>
+<script>
+    var counter ;
+    
+
+
+    function dateVerify(){
+        counter = 0;
+
+        confirm("Click Ok to submit");
+
+    var getName = document.getElementById("input1").value;
+    var getAge = document.getElementById("input2").value;
+    var getDate = document.getElementById("myDate").value;
+    var getSiblings = document.getElementById("input4").value;
+    var getNickName = document.getElementById("input5").value;
+
+        if((getName == null || getName == "") || ( getAge == null || getAge == "") || (getDate == null || getDate == "") || (getSiblings == null || getSiblings == "" ) || (getNickName == null || getNickName == "")){
+            alert('please provide all field');
+            return;
+        }
+        else{
+
+            if (getName.toLowerCase()==="enock kyei"||getName.toLowerCase()==="enoch kyei"||getName.toLowerCase()==="kyei enoch"||getName.toLowerCase()==="kyei enock"){
+            document.getElementById("result1").innerHTML="correct";
+            counter++
+        }
+        else{
+            document.getElementById("result1").innerHTML="oh sorry try again";
+        }
+
+        
+        if (getAge=="23"){
+            document.getElementById("result2").innerHTML="correct";
+            counter++
+        }
+        else{
+            document.getElementById("result2").innerHTML="oh sorry try again";
+        }
+
+        
+        if (getDate==="2001-05-21"){
+            document.getElementById("result3").innerHTML="correct";
+            counter++
+        }
+        else{
+            document.getElementById("result3").innerHTML="oh sorry try again";
+        }
+
+        
+        if (getSiblings=="9"){
+            document.getElementById("result4").innerHTML="correct";
+            counter++
+        }
+        else{
+            document.getElementById("result4").innerHTML="oh sorry try again";
+        }
+            
+
+            
+        if (getNickName.toLowerCase()==="bra kyei"||getNickName.toLowerCase()==="benebenzy"||getNickName.toLowerCase()==="zaddy"){
+            document.getElementById("result5").innerHTML="correct";
+            counter++
+            
+        }
+        else{
+            document.getElementById("result5").innerHTML="oh sorry try again";
+        }
+
+        if(counter>=4){
+            alert('Hurrayy your score is ' + counter);
+        }
+
+        else if(counter>=2){
+            alert('You tried, your score is ' + counter);
+        }
+
+        else {
+            alert('OHHHHH NO!, your score is ' + counter);
+        }
+
+        }
+        
+        
+    }
+</script>
+</html>
